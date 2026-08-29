@@ -142,7 +142,7 @@ Some possible improvements for future versions include:
 
 ## 👨‍💻 Author
 
-**Neel**
+**Himadri Aich**
 
 Built as part of my journey learning **Frontend Development, Bootstrap, and modern web technologies**.
 
