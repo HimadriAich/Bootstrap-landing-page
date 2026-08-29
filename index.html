@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeCraft Academy</title>
+
+```
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+<!-- MapLibre CSS -->
+<link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet">
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="/style.css">
+
+<!-- Map container needs a fixed height so the map can be displayed -->
+<style>
+    #map {
+        width: 100%;
+        height: 400px;
+        border-radius: 12px;
+    }
+</style>
+
+
+</head>
+
+<body>
+
+
+<!-- ==================== NAVBAR ==================== -->
+<!-- navbar-expand-lg: navbar becomes a hamburger menu below the lg breakpoint -->
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 fixed-top">
+    <div class="container">
+
+        <a href="#" class="navbar-brand fw-bold">
+            <i class="bi bi-code-slash text-info"></i> CodeCraft
+        </a>
+
+        <!-- Hamburger button for smaller screens -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- collapse + navbar-collapse makes the menu responsive -->
+        <div class="collapse navbar-collapse" id="navmenu">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a href="#courses" class="nav-link">Courses</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#questions" class="nav-link">FAQ</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#instructors" class="nav-link">Instructors</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</nav>
+
+
+<!-- ==================== HERO SECTION ==================== -->
+<section class="hero-section bg-dark text-light p-5 pt-lg-5 text-center text-sm-start">
+    <div class="container">
+        <!-- d-sm-flex: switches to flex layout on small screens and above -->
+        <div class="d-sm-flex align-items-center justify-content-between">
+
+            <div class="hero-content">
+                <span class="badge bg-info text-dark mb-3 px-3 py-2">
+                    Learn. Build. Launch.
+                </span>
+
+                <h1>
+                    Build Your Future With
+                    <span class="text-warning">Code</span>
+                </h1>
+
+                <p class="lead my-4">
+                    Learn modern web development through practical projects,
+                    hands-on lessons, and guidance from experienced developers.
+                </p>
+
+                <button class="btn btn-primary btn-lg px-4" data-bs-toggle="modal" data-bs-target="#enroll">
+                    Start Learning
+                </button>
+
+                <a href="#courses" class="btn btn-outline-light btn-lg ms-sm-2 mt-2 mt-sm-0 px-4">
+                    Explore Courses
+                </a>
+            </div>
+
+            <img class="img-fluid hero-image w-50 d-none d-sm-block" src="/images/showcase.svg" alt="Web development illustration">
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ==================== NEWSLETTER ==================== -->
+<section class="newsletter-section bg-primary text-light p-5">
+    <div class="container">
+        <!-- d-md-flex: elements become a horizontal flex layout from md screens -->
+        <div class="d-md-flex justify-content-between align-items-center">
+
+            <div>
+                <h3 class="mb-1">Stay in the loop</h3>
+                <p class="mb-3 mb-md-0">
+                    Get coding tips, project ideas, and course updates.
+                </p>
+            </div>
+
+            <div class="input-group news-input">
+                <input type="email" class="form-control" placeholder="Enter your email">
+                <button class="btn btn-dark btn-lg">Subscribe</button>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ==================== COURSE CARDS ==================== -->
+<section id="courses" class="p-5">
+    <div class="container">
+
+        <div class="text-center mb-5">
+            <span class="text-primary fw-bold">WHAT WE OFFER</span>
+            <h2 class="mt-2">Learn By Building</h2>
+            <p class="text-muted">
+                Choose a learning path and start creating real projects.
+            </p>
+        </div>
+
+        <!-- row + g-4 creates a responsive grid with spacing between cards -->
+        <div class="row g-4">
+
+            <!-- col-md-4: three equal columns on medium screens and above -->
+            <div class="col-md-4">
+                <div class="card course-card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <div class="icon-circle bg-primary text-white mx-auto mb-4">
+                            <i class="bi bi-window"></i>
+                        </div>
+
+                        <h3 class="card-title">Frontend Development</h3>
+
+                        <p class="card-text text-muted">
+                            Learn HTML, CSS, Bootstrap and JavaScript while
+                            building responsive websites from scratch.
+                        </p>
+
+                        <a href="#" class="btn btn-outline-primary">
+                            View Course
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card course-card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <div class="icon-circle bg-dark text-white mx-auto mb-4">
+                            <i class="bi bi-server"></i>
+                        </div>
+
+                        <h3 class="card-title">Backend Development</h3>
+
+                        <p class="card-text text-muted">
+                            Understand servers, APIs, databases and backend
+                            development by working on practical applications.
+                        </p>
+
+                        <a href="#" class="btn btn-outline-dark">
+                            View Course
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card course-card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <div class="icon-circle bg-warning text-dark mx-auto mb-4">
+                            <i class="bi bi-robot"></i>
+                        </div>
+
+                        <h3 class="card-title">AI & Modern Web</h3>
+
+                        <p class="card-text text-muted">
+                            Explore how AI can be combined with modern web
+                            applications to create smarter digital products.
+                        </p>
+
+                        <a href="#" class="btn btn-outline-warning">
+                            View Course
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ==================== FUNDAMENTALS SECTION ==================== -->
+<section id="fundamentals" class="p-5 bg-light">
+    <div class="container">
+        <div class="row align-items-center justify-content-between">
+
+            <!-- col-md-6: half the row on medium screens and above -->
+            <div class="col-md-6">
+                <img src="/images/fundamentals.svg" class="img-fluid" alt="Web development fundamentals">
+            </div>
+
+            <div class="col-md-6 p-4 p-lg-5">
+                <span class="text-primary fw-bold">START HERE</span>
+                <h2 class="mt-2">Master The Fundamentals</h2>
+
+                <p class="lead">
+                    Strong fundamentals make learning advanced technologies
+                    much easier.
+                </p>
+
+                <p>
+                    Start with HTML and CSS, understand responsive design,
+                    then move into JavaScript and modern frontend tools.
+                    Every concept is reinforced through small projects.
+                </p>
+
+                <a href="#" class="btn btn-dark mt-3">
+                    Explore Fundamentals
+                    <i class="bi bi-arrow-right"></i>
+                </a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ==================== REACT SECTION ==================== -->
+<section id="react" class="p-5 bg-dark text-light">
+    <div class="container">
+        <div class="row align-items-center justify-content-between">
+
+            <div class="col-md-6 p-4 p-lg-5">
+                <span class="text-info fw-bold">GO FURTHER</span>
+                <h2 class="mt-2">Build With React</h2>
+
+                <p class="lead">
+                    Turn your JavaScript knowledge into interactive applications.
+                </p>
+
+                <p>
+                    Learn components, props, state and modern React patterns
+                    while building applications that solve real problems.
+                </p>
+
+                <a href="#" class="btn btn-light mt-3">
+                    Explore React
+                    <i class="bi bi-arrow-right"></i>
+                </a>
+            </div>
+
+            <div class="col-md-6 text-center">
+                <img src="/images/react.svg" class="img-fluid react-image" alt="React illustration">
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ==================== FAQ SECTION ==================== -->
+<section id="questions" class="p-5">
+    <div class="container">
+
+        <div class="text-center mb-5">
+            <span class="text-primary fw-bold">NEED TO KNOW?</span>
+            <h2 class="mt-2">Frequently Asked Questions</h2>
+        </div>
+
+        <!-- Bootstrap Accordion: collapse components allow one question to open at a time -->
+        <div class="accordion accordion-flush shadow-sm" id="faqAccordion">
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#question-one">
+                        Do I need prior programming experience?
+                    </button>
+                </h2>
+
+                <div id="question-one" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        No. Our beginner courses start from the basics and gradually
+                        introduce more advanced concepts through practical examples.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#question-two">
+                        What technologies will I learn?
+                    </button>
+                </h2>
+
+                <div id="question-two" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        You will work with technologies such as HTML, CSS, Bootstrap,
+                        JavaScript, React and backend development tools.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#question-three">
+                        Is the learning project-based?
+                    </button>
+                </h2>
+
+                <div id="question-three" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Yes. The goal is to understand concepts by actually using them.
+                        You will build small projects before moving toward larger applications.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#question-four">
+                        Can I learn at my own pace?
+                    </button>
+                </h2>
+
+                <div id="question-four" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Absolutely. You can follow the lessons at your own pace and
+                        revisit topics whenever you need more practice.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#question-five">
+                        Will I build projects for my portfolio?
+                    </button>
+                </h2>
+
+                <div id="question-five" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Yes. Projects are an important part of the learning process,
+                        and you can use your completed projects as portfolio pieces.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ==================== INSTRUCTORS ==================== -->
+<section id="instructors" class="p-5 bg-primary">
+    <div class="container">
+
+        <div class="text-center text-white mb-5">
+            <span class="fw-bold">MEET THE TEAM</span>
+            <h2 class="mt-2">Learn From Developers</h2>
+            <p class="lead">
+                Experienced developers helping you turn concepts into practical skills.
+            </p>
+        </div>
+
+        <div class="row g-4">
+
+            <!-- col-md-6: two cards per row on medium screens -->
+            <!-- col-lg-3: four cards per row on large screens -->
+            <div class="col-md-6 col-lg-3">
+                <div class="card instructor-card h-100 border-0">
+                    <div class="card-body text-center">
+                        <img src="https://randomuser.me/api/portraits/men/11.jpg" class="rounded-circle mb-3" alt="Alex Morgan">
+
+                        <h3 class="card-title mb-2">Alex Morgan</h3>
+                        <p class="text-primary fw-semibold">Frontend Developer</p>
+
+                        <p class="card-text text-muted">
+                            Specializes in responsive interfaces and modern JavaScript.
+                        </p>
+
+                        <div>
+                            <a href="#" class="text-dark mx-1"><i class="bi bi-linkedin"></i></a>
+                            <a href="#" class="text-dark mx-1"><i class="bi bi-github"></i></a>
+                            <a href="#" class="text-dark mx-1"><i class="bi bi-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <div class="card instructor-card h-100 border-0">
+                    <div class="card-body text-center">
+                        <img src="https://randomuser.me/api/portraits/women/11.jpg" class="rounded-circle mb-3" alt="Priya Shah">
+
+                        <h3 class="card-title mb-2">Priya Shah</h3>
+                        <p class="text-primary fw-semibold">Backend Engineer</p>
+
+                        <p class="card-text text-muted">
+                            Works with APIs, databases and scalable backend systems.
+                        </p>
+
+                        <div>
+                            <a href="#" class="text-dark mx-1"><i class="bi bi-linkedin"></i></a>
+                            <a href="#" class="text-dark mx-1"><i class="bi bi-github"></i></a>
+                            <a href="#" class="text-dark mx-1"><i class="bi bi-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <div class="card instructor-card h-100 border-0">
+                    <div class="card-body text-center">
+                        <img src="https://randomuser.me/api/portraits/men/24.jpg" class="rounded-circle mb-3" alt="Daniel Brooks">
+
+                        <h3 class="card-title mb-2">Daniel Brooks</h3>
+                        <p class="text-primary fw-semibold">React Developer</p>
+
+                        <p class="card-text text-muted">
+                            Helps students create interactive applications with React.
+                        </p>
+
+                        <div>
+                            <a href="#" class="text-dark mx-1"><i class="bi bi-linkedin"></i></a>
+                            <a href="#" class="text-dark mx-1"><i class="bi bi-github"></i></a>
+                            <a href="#" class="text-dark mx-1"><i class="bi bi-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <div class="card instructor-card h-100 border-0">
+                    <div class="card-body text-center">
+                        <img src="https://randomuser.me/api/portraits/women/46.jpg" class="rounded-circle mb-3" alt="Maya Williams">
+
+                        <h3 class="card-title mb-2">Maya Williams</h3>
+                        <p class="text-primary fw-semibold">Full Stack Developer</p>
+
+                        <p class="card-text text-muted">
+                            Builds full-stack applications and mentors aspiring developers.
+                        </p>
+
+                        <div>
+                            <a href="#" class="text-dark mx-1"><i class="bi bi-linkedin"></i></a>
+                            <a href="#" class="text-dark mx-1"><i class="bi bi-github"></i></a>
+                            <a href="#" class="text-dark mx-1"><i class="bi bi-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ==================== CONTACT + MAP ==================== -->
+<section id="contact" class="p-5">
+    <div class="container">
+
+        <div class="text-center mb-5">
+            <span class="text-primary fw-bold">GET IN TOUCH</span>
+            <h2 class="mt-2">Contact CodeCraft</h2>
+            <p class="text-muted">
+                Have a question? We'd be happy to hear from you.
+            </p>
+        </div>
+
+        <div class="row g-5 align-items-center">
+
+            <div class="col-md-5">
+                <h3 class="mb-4">Contact Information</h3>
+
+                <ul class="list-group list-group-flush lead">
+                    <li class="list-group-item px-0">
+                        <i class="bi bi-geo-alt-fill text-primary me-2"></i>
+                        <span class="fw-bold">Location:</span> Boston, Massachusetts
+                    </li>
+
+                    <li class="list-group-item px-0">
+                        <i class="bi bi-telephone-fill text-primary me-2"></i>
+                        <span class="fw-bold">Phone:</span> (555) 234-5678
+                    </li>
+
+                    <li class="list-group-item px-0">
+                        <i class="bi bi-envelope-fill text-primary me-2"></i>
+                        <span class="fw-bold">Email:</span> hello@codecraft.dev
+                    </li>
+
+                    <li class="list-group-item px-0">
+                        <i class="bi bi-clock-fill text-primary me-2"></i>
+                        <span class="fw-bold">Hours:</span> Mon–Fri, 9 AM–6 PM
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-md-7">
+                <!-- MapLibre map -->
+                <div id="map"></div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="p-5 bg-dark text-white text-center position-relative">
+    <div class="container">
+
+        <div class="mb-3">
+            <a href="#" class="text-white fs-4 mx-2">
+                <i class="bi bi-github"></i>
+            </a>
+            <a href="#" class="text-white fs-4 mx-2">
+                <i class="bi bi-linkedin"></i>
+            </a>
+            <a href="#" class="text-white fs-4 mx-2">
+                <i class="bi bi-twitter"></i>
+            </a>
+        </div>
+
+        <p class="lead mb-0">
+            &copy; 2026 CodeCraft Academy. Learn. Build. Launch.
+        </p>
+
+        <!-- position-absolute places the button relative to the footer -->
+        <a href="#" class="position-absolute bottom-0 end-0 p-4 text-white">
+            <i class="bi bi-arrow-up-circle h1"></i>
+        </a>
+
+    </div>
+</footer>
+
+
+<!-- ==================== ENROLLMENT MODAL ==================== -->
+<!-- Bootstrap Modal: opens when the "Start Learning" button is clicked -->
+<div class="modal fade" id="enroll" tabindex="-1" aria-labelledby="enrollLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="enrollLabel">Start Learning</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+                <p class="lead">
+                    Tell us a little about yourself and we'll get back to you.
+                </p>
+
+                <form>
+                    <div class="mb-3">
+                        <label for="first-name" class="form-label">First Name</label>
+                        <input type="text" class="form-control" id="first-name" placeholder="Enter your first name">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="last-name" class="form-label">Last Name</label>
+                        <input type="text" class="form-control" id="last-name" placeholder="Enter your last name">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="you@example.com">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="phone" class="form-label">Phone</label>
+                        <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number">
+                    </div>
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Submit</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- Bootstrap JS Bundle includes Bootstrap's JavaScript and Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+<!-- MapLibre JS -->
+<script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+
+<script>
+    const map = new maplibregl.Map({
+        container: 'map',
+        style: 'https://tiles.openfreemap.org/styles/liberty',
+        center: [-71.0589, 42.3601],
+        zoom: 12
+    });
+
+    // Adds zoom and navigation controls to the map.
+    map.addControl(new maplibregl.NavigationControl(), 'top-right');
+</script>
+```
+
+</body>
+</html>
